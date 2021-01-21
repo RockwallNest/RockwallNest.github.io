@@ -27,7 +27,7 @@ routine同士をpipeというchannelで結び、並列処理を実行する仕�
 forEachメソッドを用いたコードと似ていると思う。 <br />
 ```ruby 
 # N: some integer value
-gen = Ractor.new do 
+gen = Ractor.new pipe do |pipe| 
   (1..N).each do
     n = pipe.take
     Ractor.yield n 
