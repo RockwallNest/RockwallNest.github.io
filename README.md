@@ -39,6 +39,7 @@ extr = (1..N).each do |i|
   [i, n]
 end
 # => [1, n1], [2, n2], ...
+# rはRactor objectで棄却され、nの値のみが取り出される
 
 ```
 
