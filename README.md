@@ -18,12 +18,13 @@ pipe = Ractor.new do
   end
 end
 ```
+##### goroutine-channel処理系と関数オブジェクトに似ているRactor
 Ractorのおかげで、Ruby2.0系よりも処理が3倍早くなったということを実感した。<br />
 並列性を考えると、現在のRactorの用途では、Go言語のgoroutineの処理系に近いのではないかと思う。<br />
-routine同士をpipeというchannelで結び、並列処理を実行する仕組みが似ている。<br />
-また、RactorはScalaなどの関数プログラミング言語にも似ていると思います。 <br />
-例えば、値を生成するgeneratorから値を取り出すextractorを用いる点などが <br />
-forEachメソッドを用いたコードと似ていると思います。 <br />
+routine同士をpipeというchannelで結び、並列処理を実行する仕組みが似ていると思う。<br />
+また、RactorはScalaなどの関数プログラミング言語にも似ている。 <br />
+値を生成するgeneratorから値を取り出すextractorを用いる点などが <br />
+forEachメソッドを用いたコードと似ていると思う。 <br />
 ```ruby 
 # N: some integer value
 gen = Ractor.new do 
